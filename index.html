@@ -18,63 +18,529 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/fontello.css">
+    <link rel="stylesheet" type="text/css" href="css/animation.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-inverse no_margin_bot" role="navigation">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">萌萌</a>
+    <!-- header logo and company name-->
+    <nav class="navbar no_margin_bot" role="navigation">
+        <div class="container bg-black header">
+            <img src="images/logo.ico" alt="">
+        </div>
+    </nav>
+    <!--  -->
+    <div class="container no-padding">
+        <!-- operations -->
+        <div class="tool-bar clearfix">
+            <div class="col-sx-12 col-sm-4">
+                <a class="btn btn-primary" href="#" role="button">
+                    <i class="icon-to-start-alt"></i> 首筆
+                </a>
+                <a class="btn btn-primary" href="#" role="button">
+                    <i class="icon-fast-bw"></i>上筆
+                </a>
+                <a class="btn btn-primary" href="#" role="button">
+                    <i class="icon-fast-fw"></i>下筆
+                </a>
+                <a class="btn btn-primary" href="#" role="button">
+                    <i class="icon-to-end-alt"></i>末筆
+                </a>
+            </div>
+            <div class="col-sx-12 col-sm-5">
+                <a class="btn btn-primary" href="#" role="button">
+                    <i class="icon-doc-add"></i>新增
+                </a>
+                <a class="btn btn-primary" href="#" role="button">
+                    <i class="icon-doc-remove"></i>刪除
+                </a>
+                <a class="btn btn-primary" href="#" role="button">
+                    <i class="icon-edit-1"></i>修改
+                </a>
+                <a class="btn btn-primary" href="#" role="button">
+                    <i class="icon-ok"></i>存檔
+                </a>
+                <a class="btn btn-primary" href="#" role="button">
+                    <i class="icon-cancel"></i>取消
+                </a>
+            </div>
+            <div class="col-sx-12 col-sm-3">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button" href="#" role="button">
+                     <i class="icon-search">搜尋</i> 
+                  </button>
+                </span>
+                    <input type="text" class="form-control" placeholder="請輸入關鍵字">
+                </div>
             </div>
         </div>
-    </nav>
-    <!--  -->
-    <div role="tabpanel">
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs bg-gray" role="tablist">
-            <li role="presentation" class="active ">
-                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">首頁</a>
-            </li>
-            <li role="presentation">
-                <a href="#customer" aria-controls="customer" role="tab" data-toggle="tab">客戶資料</a>
-            </li>
-            <li role="presentation">
-                <a href="#sales" aria-controls="sales" role="tab" data-toggle="tab">銷售</a>
-            </li>
-            <li role="presentation">
-                <a href="#stock" aria-controls="stock" role="tab" data-toggle="tab">進貨/庫存</a>
-            </li>
-            <li role="presentation">
-                <a href="#products" aria-controls="products" role="tab" data-toggle="tab">產品</a>
-            </li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="home">...</div>
-            <div role="tabpanel" class="tab-pane" id="tab">...</div>
+        <!-- main data section -->
+        <div role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs bg-gray" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#order" aria-controls="order" role="tab" data-toggle="tab"><i class="icon-basket-1"></i>門市作業</a>
+                </li>
+                <li role="presentation">
+                    <a href="#customer" aria-controls="customer" role="tab" data-toggle="tab"><i class="icon-users-1"></i>客戶資料</a>
+                </li>
+                <li role="presentation">
+                    <a href="#words" aria-controls="words" role="tab" data-toggle="tab"><i class="icon-book-2"></i>詞庫設定</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- sheet order -->
+                <div role="tabpanel" class="tab-pane active" id="order">
+                    <div class="sheet">
+                        <!-- sheet master -->
+                        <div class="clearfix">
+                            <div class="col-sx-12 col-sm-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon">客戶編號</span>
+                                    <input type="text" class="form-control" placeholder="客戶編號">
+                                    <span class="input-group-addon" id="CustName">客戶名稱</span>
+                                </div>
+                            </div>
+                            <div class="col-sx-12 col-sm-4 col-sm-push-1">
+                                <div class="input-group">
+                                    <span class="input-group-addon">下單日期</span>
+                                    <input type="text" class="form-control" placeholder="下單日期">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <div class="col-sx-12 col-sm-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon">單據號碼</span>
+                                    <input type="text" class="form-control" placeholder="單據號碼">
+                                </div>
+                            </div>
+                            <div class="col-sx-12 col-sm-2 col-sm-push-1">
+                                <div class="input-group">
+                                    <span class="input-group-addon">筆數編號</span>
+                                    <input type="text" class="form-control" placeholder="筆數編號">
+                                </div>
+                            </div>
+                            <div class="col-sx-12 col-sm-3 col-sm-push-2">
+                                <div class="input-group">
+                                    <span class="input-group-addon">合計金額</span>
+                                    <input type="text" class="form-control" placeholder="合計金額">
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="separate-line" />
+                        <!-- customize info -->
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>遠用</th>
+                                    <th>球面</th>
+                                    <th>散光</th>
+                                    <th>角度</th>
+                                    <th>ADD</th>
+                                    <th>H:/V: mm</th>
+                                    <th></th>
+                                    <th>矯正前/後</th>
+                                    <th></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>右眼</td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>左眼</td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>近用</th>
+                                    <th>球面</th>
+                                    <th>散光</th>
+                                    <th>角度</th>
+                                    <th>ADD</th>
+                                    <th>H:/V: mm</th>
+                                    <th></th>
+                                    <th>矯正前/後</th>
+                                    <th></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>右眼</td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>左眼</td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="clearfix">
+                            <div class="col-sx-12 col-sm-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon">隱形右眼</span>
+                                    <input type="text" class="form-control" placeholder="隱形右眼">
+                                </div>
+                            </div>
+                            <div class="col-sx-12 col-sm-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon">右最清度數</span>
+                                    <input type="text" class="form-control" placeholder="右最清度數">
+                                </div>
+                            </div>
+                            <div class="col-sx-12 col-sm-2">
+                                <div class="input-group">
+                                    <span class="input-group-addon">瞳距(PD)</span>
+                                    <input type="text" class="form-control" placeholder="瞳距(PD)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <div class="col-sx-12 col-sm-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon">隱形左眼</span>
+                                    <input type="text" class="form-control" placeholder="隱形左眼">
+                                </div>
+                            </div>
+                            <div class="col-sx-12 col-sm-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon">左最清度數</span>
+                                    <input type="text" class="form-control" placeholder="左最清度數">
+                                </div>
+                            </div>
+                            <div class="col-sx-12 col-sm-2">
+                                <div class="input-group">
+                                    <span class="input-group-addon">類型</span>
+                                    <input type="text" class="form-control" placeholder="類型">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <div class="col-sx-12 col-sm-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon">備註說明</span>
+                                    <textarea type="text" class="form-control" rows="3" placeholder="備註說明">
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="separate-line" />
+                        <!-- sheet detail -->
+                        <table class="table table-hover">
+                            <!--<caption>我是表格標題</caption>-->
+                            <thead>
+                                <tr>
+                                    <th>序</th>
+                                    <th>鏡架名稱</th>
+                                    <th>金額</th>
+                                    <th>鏡片名稱</th>
+                                    <th>金額</th>
+                                    <th>小計</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- customer info -->
+                <div role="tabpanel" class="tab-pane" id="customer">
+                    <div class="customer clearfix">
+                        <div class="col-xs-12 col-sm-3">
+                            <!-- listing all customer -->
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>客戶編號</th>
+                                        <th>客戶名稱</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>客戶編號</td>
+                                        <td>客戶名稱</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-xs-12 col-sm-9">
+
+                            <div class="btn-group btn-group-justified cust-info">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-warning" role="button">
+                                        查到 N 筆資料
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-danger" role="button">
+                                        新增訂單
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- find widow -->
+                            <div class="input-group cust-info">
+                                <span class="input-group-addon cust-title">客戶編號</span>
+                                <input type="text" class="form-control" placeholder="客戶編號">
+                            </div>
+                            <div class="input-group cust-info">
+                                <span class="input-group-addon cust-title">客戶名稱</span>
+                                <input type="text" class="form-control" placeholder="客戶名稱">
+                            </div>
+                            <div class="input-group cust-info">
+                                <span class="input-group-addon cust-title">電    話</span>
+                                <input type="text" class="form-control" placeholder="電    話">
+                            </div>
+                            <div class="input-group cust-info">
+                                <span class="input-group-addon cust-title">行動電話</span>
+                                <input type="text" class="form-control" placeholder="行動電話">
+                            </div>
+                            <div class="input-group cust-info">
+                                <span class="input-group-addon cust-title">生    日</span>
+                                <input type="text" class="form-control" placeholder="生    日">
+                            </div>
+                            <div class="input-group cust-info">
+                                <span class="input-group-addon cust-title">建檔日期</span>
+                                <input type="text" class="form-control" placeholder="建檔日期">
+                            </div>
+                            <div class="input-group cust-info">
+                                <span class="input-group-addon cust-title">性    別</span>
+                                <input type="text" class="form-control" placeholder="性    別">
+                            </div>
+                            <div class="input-group cust-info">
+                                <span class="input-group-addon cust-title">郵遞區號</span>
+                                <input type="text" class="form-control zip-code" placeholder="郵遞區號">
+                                <span class="input-group-addon district">城市地區</span>
+                            </div>
+                            <div class="input-group cust-info">
+                                <span class="input-group-addon cust-title">地    址</span>
+                                <input type="text" class="form-control" placeholder="地    址">
+                            </div>
+                            <div class="input-group cust-info">
+                                <span class="input-group-addon cust-title">備註說明</span>
+                                <textarea type="text" class="form-control" rows="3" placeholder="備註說明">
+                                    </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- words setting -->
+                <div role="tabpanel" class="tab-pane" id="words">
+                    <div class="words">
+                        <div class="clearfix">
+                            <div class="col-sx-12 col-sm-6 words-info">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>序</th>
+                                            <th>鏡架名稱</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-sx-12 col-sm-6 words-info">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>序</th>
+                                            <th>鏡片名稱</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <div class="col-sx-12 col-sm-6 words-info">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>序</th>
+                                            <th>地名</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="col-sx-12 col-sm-6 words-info">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>郵遞區號</th>
+                                            <th>地名</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <!--  -->
-    <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-     <div class="container">
-      <a class="navbar-brand" href="#">Title</a>
-      <ul class="nav navbar-nav">
-       <li class="active">
-        <a href="#">Home</a>
-       </li>
-       <li>
-        <a href="#">Link</a>
-       </li>
-      </ul>
-     </div>
+    <!-- footer company info -->
+    <nav class="navbar navbar-fixed-bottom" role="navigation">
+        <div class="container bg-light-gray">
+            <ul class="navbar-nav nav">
+                <li>
+                    <a href="https://goo.gl/maps/HfYGMfTH3ZS2" target="_blank"><i class="icon-home-circled"></i> 高雄市左營區實踐路24號</a>
+                </li>
+                <li>
+                    <a href="tel:075831303"> <i class="icon-phone-circled"></i> 07-5831303</a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/monglasses/"><i class="icon-facebook-circled"></i> 萌萌眼鏡</a>
+                </li>
+            </ul>
+        </div>
     </nav>
+    <!-- -->
+    <script src="js/jquery1.11.1.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

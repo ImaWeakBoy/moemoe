@@ -1,20 +1,75 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<app-header></app-header>
+<!--  -->
+<div class="container no-padding">
+  <!-- toolbar -->
+  <app-toolbar></app-toolbar>
+  <!-- main data section -->
+  <div role="tabpanel">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs bg-gray" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#order" aria-controls="order" role="tab" data-toggle="tab">
+          <i class="icon-basket-1"></i>門市作業</a>
+      </li>
+      <li role="presentation">
+        <a href="#customer" aria-controls="customer" role="tab" data-toggle="tab">
+          <i class="icon-users-1"></i>客戶資料</a>
+      </li>
+      <li role="presentation">
+        <a href="#words" aria-controls="words" role="tab" data-toggle="tab">
+          <i class="icon-book-2"></i>詞庫設定</a>
+      </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- sheet order -->
+      <div role="tabpanel" class="tab-pane active" id="order">
+        <div class="sheet">
+          <!-- sheet master -->
+          <app-sheet></app-sheet>
+          <!-- sheet detail -->
+          <app-detail></app-detail>
+        </div>
+      </div>
+      <!-- customer info -->
+      <div role="tabpanel" class="tab-pane" id="customer">
+        <div class="customer clearfix">
+          <div class="col-xs-12 col-sm-3">
+            <!-- listing customer -->
+            <app-list></app-list>
+          </div>
+          <div class="col-xs-12 col-sm-9">
+            <!-- customer -->
+            <app-customer></app-customer>
+          </div>
+        </div>
+      </div>
+      <!-- words setting -->
+      <div role="tabpanel" class="tab-pane" id="words">
+        <div class="words">
+          <div class="clearfix">
+            <div class="col-sx-12 col-sm-6 words-info">
+              <!-- frames -->
+              <app-frames></app-frames>
+            </div>
+            <div class="col-sx-12 col-sm-6 words-info">
+              <!-- glasses -->
+              <app-glasses></app-glasses>
+            </div>
+          </div>
+          <div class="clearfix">
+            <div class="col-sx-12 col-sm-6 words-info">
+              <!-- address -->
+              <app-address></app-address>
+            </div>
+            <div class="col-sx-12 col-sm-6 words-info">
+              <!-- zipcode -->
+              <app-zipcode></app-zipcode>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<app-footer></app-footer>

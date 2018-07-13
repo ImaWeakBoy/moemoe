@@ -1,44 +1,49 @@
 <!-- toolbar -->
 <div class="tool-bar clearfix">
   <div class="col-sx-12 col-sm-4">
-    <a class="btn btn-primary" href="#" role="button">
+    <span class="btn btn-primary" role="button">
       <i class="icon-to-start-alt"></i> 首筆
-    </a>
-    <a class="btn btn-primary" href="#" role="button">
+    </span>
+    <span class="btn btn-primary" role="button">
       <i class="icon-fast-bw"></i>上筆
-    </a>
-    <a class="btn btn-primary" href="#" role="button">
+    </span>
+    <span class="btn btn-primary" role="button">
       <i class="icon-fast-fw"></i>下筆
-    </a>
-    <a class="btn btn-primary" href="#" role="button">
+    </span>
+    <span class="btn btn-primary" role="button">
       <i class="icon-to-end-alt"></i>末筆
-    </a>
-  </div>
-  <div class="col-sx-12 col-sm-5">
-    <a class="btn btn-primary" href="#" role="button">
-      <i class="icon-doc-add"></i>新增
-    </a>
-    <a class="btn btn-primary" href="#" role="button">
-      <i class="icon-doc-remove"></i>刪除
-    </a>
-    <a class="btn btn-primary" href="#" role="button">
-      <i class="icon-edit-1"></i>修改
-    </a>
-    <a class="btn btn-primary" href="#" role="button">
-      <i class="icon-ok"></i>存檔
-    </a>
-    <a class="btn btn-primary" href="#" role="button">
-      <i class="icon-cancel"></i>取消
-    </a>
+    </span>
   </div>
   <div class="col-sx-12 col-sm-3">
+    <span class="btn btn-primary" role="button" (click)="insertData()">
+      <i class="icon-doc-add"></i>新增
+    </span>
+    <span class="btn btn-primary" role="button" (click)="deleteData()">
+      <i class="icon-doc-remove"></i>刪除
+    </span>
+    <span class="btn btn-primary" role="button" (click)="updateData()">
+      <i class="icon-edit-1"></i>修改
+    </span>
+    <!-- <span class="btn btn-primary" role="button">
+      <i class="icon-ok"></i>存檔
+    </span>
+    <span class="btn btn-primary" role="button">
+      <i class="icon-cancel"></i>取消
+    </span> -->
+  </div>
+  <div class="col-sx-12 col-sm-1 col-sm-offset-4 text-right">
+    <span class="btn btn-primary" role="button">
+      <i class="icon-search"></i>搜尋
+    </span>
+  </div>
+  <!-- <div class="col-sx-12 col-sm-5">
     <div class="input-group">
       <span class="input-group-btn">
-        <button class="btn btn-primary" type="button" href="#" role="button">
+        <button class="btn btn-primary" type="button" role="button">
           <i class="icon-search">搜尋</i>
         </button>
       </span>
       <input type="text" class="form-control" placeholder="請輸入關鍵字">
     </div>
-  </div>
+  </div> -->
 </div>

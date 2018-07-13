@@ -34,6 +34,14 @@ create table orderMaster (
     n_l_hv     varchar(10)                          , -- H:/V:mm
     n_l_bf     varchar(10)                          , -- 矯正前/後
     --
+    r_contact  varchar(10)                          , -- 隱形右眼
+    l_contact  varchar(10)                          , -- 隱形左眼
+    r_max      varchar(10)                          , -- 右眼最大度數
+    l_max      varchar(10)                          , -- 左眼最大度數
+    p_dist     varchar(10)                          , -- 瞳距
+    p_type     varchar(10)                          , -- 類型
+    remark     text                                 , -- 備註
+    --
     crea_date  datetime                             , -- 第一次產生資料時間
     edit_date  datetime                               -- 最後一次修改資料時間
 )

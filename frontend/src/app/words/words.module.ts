@@ -4,6 +4,7 @@ import { FramesComponent } from './frames/frames.component';
 import { GlassesComponent } from './glasses/glasses.component';
 import { ZipcodeComponent } from './zipcode/zipcode.component';
 import { AddressComponent } from './address/address.component';
+import { WordsComponent } from './words/words.component';
 
 @NgModule({
   imports: [CommonModule],
@@ -11,13 +12,9 @@ import { AddressComponent } from './address/address.component';
     FramesComponent,
     GlassesComponent,
     ZipcodeComponent,
-    AddressComponent
+    AddressComponent,
+    WordsComponent
   ],
-  exports: [
-    FramesComponent,
-    GlassesComponent,
-    ZipcodeComponent,
-    AddressComponent
-  ]
+  exports: [WordsComponent]
 })
 export class WordsModule {}

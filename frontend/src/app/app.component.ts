@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  tab = [true, false, false];
+
+  setTabStatus(t: number) {
+    this.tab = [false, false, false];
+    this.tab[t] = true;
+  }
 }

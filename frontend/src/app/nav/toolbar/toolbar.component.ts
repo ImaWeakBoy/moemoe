@@ -6,8 +6,8 @@ import { ServerRequestingService } from '../../services/server-requesting.servic
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
-  // constructor(private serverRequesting: ServerRequestingService) {}
   constructor() {}
+
   ngOnInit() {}
   //
   insertData() {}
